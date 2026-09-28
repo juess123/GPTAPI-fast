@@ -1,0 +1,15 @@
+项目目录：E:\GPTAPI-fast
+
+首次配置或依赖变更后，在 PowerShell 执行：
+Set-Location E:\GPTAPI-fast
+& .\setup_environment.ps1
+
+启动 Web 服务（示例使用 9000 端口）：
+Set-Location E:\GPTAPI-fast
+$env:WEBAPP_HOST="127.0.0.1"
+$env:WEBAPP_PORT="9000"
+& .\.venv\Scripts\python.exe webapp\server.py
+
+浏览器打开：http://127.0.0.1:9000
+
+程序接收输入文件和补充提示词，发送给 GPT 生成 Excel 工作簿构建脚本，在本机运行后仅提供 final_quote.xlsx 下载。
